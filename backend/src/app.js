@@ -15,10 +15,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://primetrade-ai-assignment-lake.vercel.app",
+  origin: [
+    "https://primetrade-ai-assignment-lake.vercel.app",
+    "http://localhost:5173"
+  ],
   credentials: true,
 }));
-
 
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
